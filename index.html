@@ -3,18 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zoho Invoice</title>
+    <title>Tax Invoice</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="invoice-cointainer">
+    <div class="container">
         <div class="header">
-            <div class="logo">
-                <input type="file" id="uploadLogo" accept=""
+            <input type="file" id="upload" hidden>
+            <label for="upload" class="upload-label">
+                <img src="upload-icon.png" alt="Upload Logo" >
+                <div class="upload-section">
+                     Upload Logo
+                <div class="us1">
+                     240 x 240 pixels @ 72 DPI, 
+                <br>
+                     Maximum size of 1MB. 
+                </div>
+            </div>
+            </label>
+            <h1 class="editable" contenteditable="true" data-placeholder="TAX INVOICE">TAX INVOICE</h1>
+        </div>
+        <div class="details">
+            <div class="left">
+                <div class="editable" data-placeholder="Your Company"></div>
+                <div class="editable" data-placeholder="Your Name"></div>
+                <div class="editable" data-placeholder="Company's GSTIN"></div>
+                <div class="editable" data-placeholder="Company's Address"></div>
+                <div class="editable" data-placeholder="City"></div>
+                <div class="editable" data-placeholder="State"></div>
+                <div class="editable" data-placeholder="India"></div>
             </div>
         </div>
-
+        <br>
+        <br>
+        <div class="invoice-details">
+            <p>Bill To:</p>
+            <div class="editable" data-placeholder="Your Client's Company"></div>
+            <div class="editable" data-placeholder="Client's GSTIN"></div>
+            <div class="editable" data-placeholder="Client's Address"></div>
+            <div class="editable" data-placeholder="City"></div>
+            <div class="editable" data-placeholder="State"></div>
+            <div class="editable" data-placeholder="India"></div>
+        </div>
+        <div class="invoice-inputs">
+            <input type="text" class="editable-input" placeholder="Invoice#: INV-12">
+            <input type="date" class="editable-input">
+            <input type="date" class="editable-input">
+        </div>
     </div>
-    
+    <script src="script.js"></script>
 </body>
 </html>
