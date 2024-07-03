@@ -36,8 +36,9 @@
         </div>
         <br>
         <br>
-        <div class="invoice-details">
-            <p>Bill To:</p>
+        <div class="details">
+            <div class="right">
+            <p class="bill">Bill To:</p>
             <div class="editable" data-placeholder="Your Client's Company"></div>
             <div class="editable" data-placeholder="Client's GSTIN"></div>
             <div class="editable" data-placeholder="Client's Address"></div>
@@ -45,12 +46,80 @@
             <div class="editable" data-placeholder="State"></div>
             <div class="editable" data-placeholder="India"></div>
         </div>
-        <div class="invoice-inputs">
-            <input type="text" class="editable-input" placeholder="Invoice#: INV-12">
-            <input type="date" class="editable-input">
-            <input type="date" class="editable-input">
+    </div>
+    <form class="invoice-form">
+        <div class="form-group">
+            <label for="invoice-number" class="Date-label">Invoice#</label>
+            <input type="text" id="invoice-number" name="invoice-number" placeholder="INV-12">
+        </div>
+        <div class="form-group">
+            <label for="invoice-date" class="Date-label">Invoice Date</label>
+            <input type="date" id="invoice-date" name="invoice-date" value="2024-07-02">
+        </div>
+        <div class="form-group">
+            <label for="due-date" class="Date-label">Due Date </label>
+            <input type="date" id="due-date" name="due-date" value="2024-07-02">
+        </div>
+    </form>
+    <div class="table-section">
+        <table>
+            <thead>
+                <tr>
+                    <th>Item Description</th>
+                    <th>Qty</th>
+                    <th>Rate</th>
+                    <th>SGST</th>
+                    <th>CGST</th>
+                    <th>Cess</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody id="invoice-items">
+                <tr>
+                    <td contenteditable="true">Brochure Design</td>
+                    <td contenteditable="true">2</td>
+                    <td contenteditable="true">100.00</td>
+                    <td>6</td>
+                    <td>6</td>
+                    <td>0</td>
+                    <td>200.00</td>
+                </tr>
+                <tr>
+                    <td contenteditable="true" data-placeholder="Enter item name/description"></td>
+                    <td contenteditable="true">1</td>
+                    <td contenteditable="true">0.00</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0.00</td>
+                </tr>
+                <tr>
+                    <td contenteditable="true" data-placeholder="Enter item name/description"></td>
+                    <td contenteditable="true">1</td>
+                    <td contenteditable="true">0.00</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0.00</td>
+                </tr>
+            </tbody>
+        </table>
+        <button onclick="addLineItem()">+ Add Line Item</button>
+        <div class="totals">
+            <div>Sub Total: <span id="sub-total">200.00</span></div>
+            <div>SGST (6%): <span id="sgst">12.00</span></div>
+            <div>CGST (6%): <span id="cgst">12.00</span></div>
+            <div>TOTAL: ₹<span id="total">224.00</span></div>
+        </div>
+        <h4 class="editable" contenteditable="true" data-placeholder="Notes">Notes</h3>
+        <textarea class="custom" rows="3" cols="100" >It was great doing business with you.</textarea>
+        <br>
+        <br>
+        <h4 class="editable" contenteditable="true" data-placeholder="Terms & Conditions">Terms & Conditions</h3>
+            <textarea class="custom" rows="3" cols="100" >Please make the payment by the due date.</textarea>
         </div>
     </div>
-    <script src="script.js"></script>
+</div>
+ <script src="script.js"></script>
 </body>
 </html>
